@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".BikeDetail"
-    android:background="#DDDDDD">
+    android:background="#9A998F">
 
     <TextView
         android:id="@+id/bikeName"
@@ -59,7 +59,7 @@
                                 android:text="Lóerő:" />
 
                             <TextView
-                                android:id="@+id/textView"
+                                android:id="@+id/HorsePower"
                                 style="@style/InfoTextsStyle"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
@@ -69,11 +69,15 @@
                         </LinearLayout>
 
                         <SeekBar
+                            android:id="@+id/HorsePowerSeekbar"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:clickable="false"
-                            android:max="230"
-                            android:min="15">
+                            android:max="200"
+                            android:min="15"
+                            android:progress="20"
+                            android:progressBackgroundTint="#000000"
+                            android:progressTint="#D13030">
 
                         </SeekBar>
 
@@ -105,28 +109,30 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/accelerationTextView"
+                                android:id="@+id/ccmTextView"
                                 style="@style/InfoTextsStyle"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Gyorsulás:" />
+                                android:text="Köbcenti:" />
 
                             <TextView
-                                android:id="@+id/accelerationValue"
+                                android:id="@+id/ccmValue"
                                 style="@style/InfoTextsStyle"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:gravity="right"
-                                android:text="4.3" />
+                                android:text="487ccm" />
                             " />
                         </LinearLayout>
 
                         <SeekBar
+                            android:id="@+id/ccmSeekBar"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:clickable="false"
-                            android:max="230"
-                            android:min="15">
+                            android:max="1400"
+                            android:min="15"
+                            android:progressBackgroundTint="#040404">
 
                         </SeekBar>
 
@@ -170,17 +176,20 @@
                                 style="@style/InfoTextsStyle"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:gravity="right"
-                                android:text="299" />
+                                android:gravity="left"
+                                android:text="299kmh"
+                                android:textSize="15sp" />
                             " />
                         </LinearLayout>
 
                         <SeekBar
+                            android:id="@+id/topSpeedSeekBar"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:clickable="false"
-                            android:max="230"
-                            android:min="15">
+                            android:max="299"
+                            android:min="15"
+                            android:progressBackgroundTint="#000000">
 
                         </SeekBar>
 
@@ -191,7 +200,7 @@
         </TableLayout>
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/bikeImage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -223,6 +232,32 @@
                 android:layout_height="wrap_content" >
 
                 <TextView
+                    android:id="@+id/manufacturertextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gyártó: "
+                    style="@style/InfoTextsStyle"/>
+
+                <TextView
+                    android:id="@+id/manufacturerValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Suzuki"
+                    style="@style/InfoTextsStyle"/>
+
+            </TableRow>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#c0c0c0"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"/>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+
+                <TextView
                     android:id="@+id/prodYeartextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -249,17 +284,17 @@
 
                 <TextView
                     android:id="@+id/typetextView"
+                    style="@style/InfoTextsStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Típus:"
-                    style="@style/InfoTextsStyle"/>
+                    android:text="Motor típus:" />
 
                 <TextView
-                    android:id="@+id/typeYearValue"
+                    android:id="@+id/typeValue"
+                    style="@style/InfoTextsStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Naked"
-                    style="@style/InfoTextsStyle"/>
+                    android:text="Sor 2" />
 
             </TableRow>
             <View

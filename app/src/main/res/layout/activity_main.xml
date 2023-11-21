@@ -45,28 +45,29 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="openManufacturers"
-                    android:text="" />
+                    android:text="Márkák" />
 
                 <Button
                     android:id="@+id/button2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=""
+                    android:text="Típusok"
                     style="@style/mainScreenButton"/>
 
                 <Button
                     android:id="@+id/button3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=""
+                    android:text="TOP 10"
                     style="@style/mainScreenButton"/>
 
                 <Button
                     android:id="@+id/button4"
+                    style="@style/mainScreenButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=""
-                    style="@style/mainScreenButton"/>
+                    android:onClick="openProfile"
+                    android:text="Saját adatlap" />
             </TableRow>
         </TableLayout>
     </LinearLayout>
