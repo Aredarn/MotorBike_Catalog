@@ -18,11 +18,12 @@ public class BikeModel {
     private String fuelSystem;
     private int topSpeed;
     private String photoURL;
+    private int clicks;
 
     // Constructor allowing null for fuelSystem
     public BikeModel(String name, String manufacturer, String series, int horsepower, int weight, int torque,
                      int firstProductionYear, int lastProductionYear, int ccm, int noCylinders, int noGears,
-                     String cooling, String engineType, int fuelSize, String fuelSystem, int topSpeed,String photoURL) {
+                     String cooling, String engineType, int fuelSize, String fuelSystem, int topSpeed,String photoURL,int clicks) {
         this.name = name;
         this.manufacturer = manufacturer;
         this.series = series;
@@ -40,7 +41,7 @@ public class BikeModel {
         this.fuelSystem = fuelSystem;
         this.topSpeed = topSpeed;
         this.photoURL = photoURL;
-
+        this.clicks = clicks;
     }
 
     public String getName() {
@@ -108,4 +109,7 @@ public class BikeModel {
     }
 
     public String getPhotoURL(){return photoURL;}
+
+    public int getClicks(){return clicks;}
+
 }

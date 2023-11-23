@@ -7,8 +7,8 @@
     </style>
 
     <style name="mainScreenButton">
-
         <item name="android:background"> @drawable/roundedbutton</item>
+        <item name="android:layout_margin">10dp</item>
     </style>
 
     <style name="ProfileItemStyle">

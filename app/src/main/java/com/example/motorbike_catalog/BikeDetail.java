@@ -16,11 +16,12 @@ import java.io.IOException;
 
 public class BikeDetail extends AppCompatActivity {
 
-    TextView BikeName,HorsePower,TopSpeed,CCM,Manufacturer,ProdYears, EngineType, Weight;
+    TextView BikeName,HorsePower,TopSpeed,CCM,Manufacturer,ProdYears, EngineType, Weight,Clicks, FuelSize,FuelInjection;
     SeekBar HorsePowerSeekBar, CCMSeekbar, TopSpeedSeekBar;
     ImageView BikeImage;
     private ModelAdapter adapter;
     BikeModel bikeModel;
+    DatabaseHelper databaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,9 @@ public class BikeDetail extends AppCompatActivity {
          EngineType = findViewById(R.id.typeValue);
          Weight = findViewById(R.id.weightValue);
          TopSpeed = findViewById(R.id.topSpeedValue);
+         Clicks = findViewById(R.id.clicks);
+         FuelSize = findViewById(R.id.fuelValue);
+         FuelInjection = findViewById(R.id.fuelInjectionValue);
 
          // SEEKBAR
         HorsePowerSeekBar = findViewById(R.id.HorsePowerSeekbar);
@@ -56,8 +60,6 @@ public class BikeDetail extends AppCompatActivity {
         try {
             databaseHelper.createDatabase();
             bikeModelDAO.open();
-
-
 
             Cursor cursor = bikeModelDAO.getBikeModel(bikeName);
             if (cursor.moveToFirst()) {
@@ -78,18 +80,21 @@ public class BikeDetail extends AppCompatActivity {
                 @SuppressLint("Range") String fuelSystem = cursor.getString(cursor.getColumnIndex("fuelSystem"));
                 @SuppressLint("Range") int topSpeed = cursor.getInt(cursor.getColumnIndex("topSpeed"));
                 @SuppressLint("Range") String photoURL = cursor.getString(cursor.getColumnIndex("photoURL"));
+                @SuppressLint("Range") int clicks = cursor.getInt(cursor.getColumnIndex("clicks"));
 
-                // Create a BikeModel object with the retrieved data
                 bikeModel = new BikeModel(modelName, manufacturer, series, horsepower, weight, torque,
                         firstProductionYear, lastProductionYear, ccm, noCylinders, noGears, cooling,
-                        engineType, fuelSize, fuelSystem,topSpeed,photoURL);
-                // Use the bikeModel as needed, for example, add it to a list or perform actions
-            }
+                        engineType, fuelSize, fuelSystem,topSpeed,photoURL,clicks);
+                }
         } catch (IOException e) {
             throw new RuntimeException(e);
         } finally {
             bikeModelDAO.close();
         }
+
+        databaseHelper.incrementClicksValue(bikeModel.getName());
+        Clicks.setText(bikeModel.getClicks() + "");
+
 
         BikeName.setText(bikeModel.getName() + "");
 
@@ -115,10 +120,17 @@ public class BikeDetail extends AppCompatActivity {
            Picasso.get().load(url).into(BikeImage);
         }
 
-        EngineType.setText(bikeModel.getEngineType() + " " + bikeModel.getNoCylinders());
+        EngineType.setText(bikeModel.getEngineType() + " ");
+        FuelSize.setText(bikeModel.getFuelSize() + " liter");
 
-
-
+        if(bikeModel.getFuelSystem() == "Carburetor")
+        {
+            FuelInjection.setText("Karburátor");
+        }
+        else
+        {
+            FuelInjection.setText("Injektor");
+        }
 
 
     }

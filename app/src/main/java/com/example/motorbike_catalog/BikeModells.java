@@ -75,9 +75,10 @@ public class BikeModells extends AppCompatActivity {
                     @SuppressLint("Range") String fuelSystem = cursor.getString(cursor.getColumnIndex("fuelSystem"));
                     @SuppressLint("Range") int topSpeed = cursor.getInt(cursor.getColumnIndex("fuelSize"));
                     @SuppressLint("Range") String photoURL = cursor.getString(cursor.getColumnIndex("photoURL"));
+                    @SuppressLint("Range") int clicks = cursor.getInt(cursor.getColumnIndex("clicks"));
                     bikeModelList.add(new BikeModel(modelName, manufacturer, series, horsepower, weight, torque,
                             firstProductionYear, lastProductionYear, ccm, noCylinders, noGears, cooling,
-                            engineType, fuelSize, fuelSystem,topSpeed,photoURL));
+                            engineType, fuelSize, fuelSystem,topSpeed,photoURL,clicks));
                 } while (cursor.moveToNext());
             }
         } catch (IOException e) {

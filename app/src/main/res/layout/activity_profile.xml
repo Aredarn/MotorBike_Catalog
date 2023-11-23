@@ -7,133 +7,48 @@
     android:orientation="vertical"
     tools:context=".Profile">
 
-    <TableLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/rounded_bottom_edges">
 
-        <TableRow
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/ProfilePicture"
+            android:layout_width="250px"
+            android:layout_height="250px"
+            android:background="@drawable/avatar_biker"
+            android:paddingLeft="200dp"
+            android:layout_margin="20dp"/>
+
+        <TextView
+            android:id="@+id/ProfileNameTextView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="25dp"
-            android:background="@drawable/rounded_bottom_edges">>
-
-            <ImageView
-                android:id="@+id/ProfilePicture"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                />
-
-            <TextView
-                android:id="@+id/ProfileNameTextView"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:textSize="24dp"
-                android:textColor="@color/white"
-                android:layout_margin="23dp"
-                android:text="Profile név"
-
-                />
-        </TableRow>
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="25dp">
+            android:layout_weight="3"
+            android:textSize="30dp"
+            android:text="TextView"
+            android:textColor="@color/white"
+            android:layout_marginTop="50dp"/>
+    </LinearLayout>
 
 
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                 />
+    <Button
+        android:id="@+id/ownBikes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:onClick="openMyBikesMenu"
+        android:text="Saját motorok"
+        android:textSize="30dp" />
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Saját motorok"
-                style="@style/ProfileItemStyle"
-                />
-        </TableRow>
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="25dp">
+    <Button
+        android:id="@+id/bikeAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:onClick="openAddBikeMenu"
+        android:text="Motor hozzáadása"
+        android:textSize="30dp" />
 
-
-            <ImageView
-                android:id="@+id/imageView5"
-                android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                 />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Motor hozzáadás"
-                style="@style/ProfileItemStyle"
-                />
-        </TableRow>
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="25dp">
-
-
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                />
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Saját motorok"
-
-                />
-        </TableRow>
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="25dp">
-
-
-            <ImageView
-                android:id="@+id/imageView7"
-                android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                 />
-
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Motor hozzáadás"
-                style="@style/ProfileItemStyle"
-                />
-        </TableRow>
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="25dp">
-
-
-            <ImageView
-                android:id="@+id/imageView8"
-                android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                />
-
-            <TextView
-                android:id="@+id/textView87"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Motor hozzáadás"
-                style="@style/ProfileItemStyle"
-                />
-        </TableRow>
-    </TableLayout>
 </LinearLayout>

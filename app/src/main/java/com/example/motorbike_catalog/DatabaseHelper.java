@@ -1,6 +1,9 @@
 package com.example.motorbike_catalog;
 
+import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -11,9 +14,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    // ...
-
-    private static final String DATABASE_NAME = "motorbikes.db";
+    private static final String DATABASE_NAME = "motorbikes";
     private static final int DATABASE_VERSION = 1;
 
     private final Context context;
@@ -72,5 +73,42 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         output.close();
         input.close();
     }
+
+    /*
+    public void incrementClicksValue(String modelName) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("clicks",2);
+
+        db.update("bikemodel",contentValues,"name = ?", new String[]{modelName});
+    }*/
+
+    public void incrementClicksValue(String modelName) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        // Construct the SQL query to update the Clicks value by 1 for a specific model name
+        String whereClause = "name=?";
+        String[] whereArgs = { modelName };
+
+        Cursor cursor = db.query("bikemodel", new String[]{"clicks"}, whereClause, whereArgs, null, null, null);
+
+        if (cursor != null && cursor.moveToFirst()) {
+            @SuppressLint("Range") int currentClicks = cursor.getInt(cursor.getColumnIndex("clicks"));
+            int newClicks = currentClicks + 1;
+
+            // Update the Clicks value for the specific model
+            values.put("Clicks", newClicks);
+            db.update("bikemodel", values, whereClause, whereArgs);
+
+            cursor.close();
+        }
+        db.close();
+    }
+
+
+
 }
+
+
 
