@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background2"
+    android:background="@drawable/roadwallpaper"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -20,7 +20,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="700px"
+        android:layout_height="600px"
         android:src="@drawable/road"
         app:srcCompat="@drawable/road" />
 
@@ -31,7 +31,8 @@
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:padding="20dp">
 
             <TableRow
                 android:layout_width="match_parent"
@@ -42,32 +43,45 @@
                 <Button
                     android:id="@+id/button"
                     style="@style/mainScreenButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_margin="20dp"
                     android:onClick="openManufacturers"
                     android:text="Márkák" />
 
                 <Button
                     android:id="@+id/button2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_margin="20dp"
                     android:text="Típusok"
                     style="@style/mainScreenButton"/>
 
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+
+                >
                 <Button
                     android:id="@+id/button3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_margin="20dp"
                     android:text="TOP 10"
                     style="@style/mainScreenButton"/>
 
                 <Button
                     android:id="@+id/button4"
                     style="@style/mainScreenButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_margin="20dp"
                     android:onClick="openProfile"
                     android:text="Saját adatlap" />
+
+
             </TableRow>
         </TableLayout>
     </LinearLayout>
