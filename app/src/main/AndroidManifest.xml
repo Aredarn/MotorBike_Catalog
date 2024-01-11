@@ -15,6 +15,9 @@
         android:theme="@style/Theme.MotorBike_Catalog"
         tools:targetApi="31">
         <activity
+            android:name=".top10_model"
+            android:exported="false" />
+        <activity
             android:name=".MyBikes"
             android:exported="false" />
         <activity

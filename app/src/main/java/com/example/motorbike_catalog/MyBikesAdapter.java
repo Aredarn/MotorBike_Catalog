@@ -57,8 +57,8 @@ public class MyBikesAdapter extends RecyclerView.Adapter<MyBikesAdapter.BikeView
                 String bikeToDelete = holder.textViewModelName.getText().toString();
                 deleteBikeFromSharedPreferences(userID, bikeToDelete);
                 notifyItemRemoved(position);
-                // Notify the adapter about the cursor change
                 notifyDataSetChanged();
+                Toast.makeText(context, "Motor törölve!!!", Toast.LENGTH_SHORT).show();
             });
 
             holder.itemView.setOnClickListener(v -> {

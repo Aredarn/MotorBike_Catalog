@@ -32,4 +32,10 @@ public class MainActivity extends AppCompatActivity {
         this.startActivity(profile);
     }
 
+    public void openTop10(View v)
+    {
+        Intent profile = new Intent(this,top10_model.class);
+        this.startActivity(profile);
+    }
+
 }

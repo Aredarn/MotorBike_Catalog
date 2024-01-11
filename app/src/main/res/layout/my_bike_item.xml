@@ -41,8 +41,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Delete Bike"
-            android:backgroundTint="#888888"
-            android:layout_marginLeft="40dp"/>
+            android:backgroundTint="#112151"
+            android:layout_marginLeft="70dp"
+            android:textColor="@color/white"/>
     </LinearLayout>
 
 </LinearLayout>

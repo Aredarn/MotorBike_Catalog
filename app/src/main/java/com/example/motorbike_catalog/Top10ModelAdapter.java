@@ -8,38 +8,40 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.motorbike_catalog.BikeModel;
+
+
 import java.util.List;
 
-public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.BikeModelViewHolder> {
-    private List<BikeModel> bikeModels;
+public class Top10ModelAdapter extends RecyclerView.Adapter<Top10ModelAdapter.BikeModelViewHolder> {
+    private List<BikeModel> top10BikeModels;
     private OnItemClickListener itemClickListener;
 
-    public ModelAdapter(List<BikeModel> bikeModels) {
-        this.bikeModels = bikeModels;
+    public Top10ModelAdapter(List<BikeModel> top10BikeModels) {
+        this.top10BikeModels = top10BikeModels;
     }
 
     @NonNull
     @Override
     public BikeModelViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.bike_model_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.topbike_item, parent, false);
         return new BikeModelViewHolder(view);
     }
 
-
     @Override
     public int getItemCount() {
-        return bikeModels.size();
+        return top10BikeModels.size();
     }
 
     public static class BikeModelViewHolder extends RecyclerView.ViewHolder {
-        TextView textViewModelName, textViewManufacturer, textViewHorsepower;
+        TextView textViewModelName, textViewManufacturer, textViewHorsepower, textClicks;
 
         public BikeModelViewHolder(View itemView) {
             super(itemView);
             textViewModelName = itemView.findViewById(R.id.textViewModelName);
             textViewManufacturer = itemView.findViewById(R.id.textViewManufacturer);
             textViewHorsepower = itemView.findViewById(R.id.textViewHorsepower);
-
+            textClicks = itemView.findViewById(R.id.clickCount);
         }
     }
 
@@ -55,19 +57,16 @@ public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.BikeModelVie
 
     @Override
     public void onBindViewHolder(@NonNull BikeModelViewHolder holder, int position) {
-        BikeModel bikeModel = bikeModels.get(position);
+        BikeModel bikeModel = top10BikeModels.get(position);
         holder.textViewModelName.setText(bikeModel.getManufacturer() + " " + bikeModel.getName());
         holder.textViewManufacturer.setText("Gyártó: " + bikeModel.getManufacturer());
         holder.textViewHorsepower.setText("Lóerő: " + bikeModel.getHorsepower());
+        holder.textClicks.setText("Kattintások: " + bikeModel.getClicks());
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (itemClickListener != null) {
-                    itemClickListener.onItemClick(bikeModel.getName());
-                }
+        holder.itemView.setOnClickListener(v -> {
+            if (itemClickListener != null) {
+                itemClickListener.onItemClick(bikeModel.getName());
             }
         });
     }
 }
-

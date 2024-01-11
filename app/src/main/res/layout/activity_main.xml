@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1199FA"
+    android:background="#445454"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -12,10 +12,11 @@
         android:id="@+id/appNameTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Motor katalógus"
+        android:text="MOTOR KATALÓGUS"
         android:textAlignment="center"
         android:textColor="#020101"
-        android:textSize="34sp" />
+        android:textSize="40sp"
+        android:layout_margin="10dp"/>
 
     <ImageView
         android:id="@+id/imageView"
@@ -39,17 +40,11 @@
             android:text="Márkák" />
 
         <Button
-            android:id="@+id/button2"
-            style="@style/mainScreenButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Típusok" />
-
-        <Button
             android:id="@+id/button3"
             style="@style/mainScreenButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="openTop10"
             android:text="TOP 10" />
 
         <Button
@@ -59,6 +54,15 @@
             android:layout_height="wrap_content"
             android:onClick="openProfile"
             android:text="Saját profil" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Készítette: Mészáros Martin"
+            android:textColor="@color/black"
+            android:textAlignment="textEnd"
+            android:paddingTop="150dp">
+        </TextView>
 
     </LinearLayout>
 

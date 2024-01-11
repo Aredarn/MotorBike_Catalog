@@ -40,6 +40,12 @@ public class BikeModelDAO {
         return database.query("bikemodel", null, null, null, null, null, null);
     }
 
+    public Cursor getTop10ClickedBikeModels() {
+        return database.query("bikemodel", null, null, null, null, null, "clicks DESC", "10");
+    }
+
+
+
     public Cursor getBikeModel(String modelName) {
         String[] projection = null; // null means return all columns
         String selection = "name = ?";

@@ -4,13 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".BikeModells"
-    android:background="#334343">
+    tools:context=".top10_model">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/bikeModelRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:id="@+id/topBikes"
+        android:layout_width="409dp"
+        android:layout_height="729dp" />
 </LinearLayout>
