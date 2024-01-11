@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#445454"
+    android:background="@drawable/background2"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -12,58 +12,64 @@
         android:id="@+id/appNameTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MOTOR KATALÓGUS"
+        android:text="TextView"
         android:textAlignment="center"
         android:textColor="#020101"
-        android:textSize="40sp"
-        android:layout_margin="10dp"/>
+        android:textSize="34sp" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="700px"
         android:src="@drawable/road"
-        app:srcCompat="@drawable/road"
-        android:padding="10dp"/>
+        app:srcCompat="@drawable/road" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/button"
-            style="@style/mainScreenButton"
+        <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="openManufacturers"
-            android:text="Márkák" />
+            android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/button3"
-            style="@style/mainScreenButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="openTop10"
-            android:text="TOP 10" />
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                >
 
-        <Button
-            android:id="@+id/button4"
-            style="@style/mainScreenButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="openProfile"
-            android:text="Saját profil" />
+                <Button
+                    android:id="@+id/button"
+                    style="@style/mainScreenButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="openManufacturers"
+                    android:text="Márkák" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Készítette: Mészáros Martin"
-            android:textColor="@color/black"
-            android:textAlignment="textEnd"
-            android:paddingTop="150dp">
-        </TextView>
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Típusok"
+                    style="@style/mainScreenButton"/>
 
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TOP 10"
+                    style="@style/mainScreenButton"/>
+
+                <Button
+                    android:id="@+id/button4"
+                    style="@style/mainScreenButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="openProfile"
+                    android:text="Saját adatlap" />
+            </TableRow>
+        </TableLayout>
     </LinearLayout>
 
 </LinearLayout>
