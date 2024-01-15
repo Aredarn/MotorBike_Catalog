@@ -4,25 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/roadwallpaper"
+    android:background="@drawable/wallpaper"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/appNameTextView"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textAlignment="center"
-        android:textColor="#020101"
-        android:textSize="34sp" />
+        android:layout_height="?attr/actionBarSize"
+        android:background="#66BBFF"
+        android:elevation="3dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="600px"
-        android:src="@drawable/road"
-        app:srcCompat="@drawable/road" />
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        app:srcCompat="@drawable/rider" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -41,20 +43,14 @@
                 >
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/bikeBrandsButton"
                     style="@style/mainScreenButton"
-                    android:layout_width="130dp"
-                    android:layout_height="130dp"
-                    android:layout_margin="20dp"
                     android:onClick="openManufacturers"
-                    android:text="Márkák" />
+                    android:text="@string/brands" />
 
                 <Button
-                    android:id="@+id/button2"
-                    android:layout_width="130dp"
-                    android:layout_height="130dp"
-                    android:layout_margin="20dp"
-                    android:text="Típusok"
+                    android:id="@+id/bikeTypesButton"
+                    android:text="@string/types"
                     style="@style/mainScreenButton"/>
 
             </TableRow>
@@ -65,21 +61,15 @@
 
                 >
                 <Button
-                    android:id="@+id/button3"
-                    android:layout_width="130dp"
-                    android:layout_height="130dp"
-                    android:layout_margin="20dp"
-                    android:text="TOP 10"
+                    android:id="@+id/topBikesButton"
+                    android:text="@string/top_bikes"
                     style="@style/mainScreenButton"/>
 
                 <Button
-                    android:id="@+id/button4"
+                    android:id="@+id/profileButton"
                     style="@style/mainScreenButton"
-                    android:layout_width="130dp"
-                    android:layout_height="130dp"
-                    android:layout_margin="20dp"
                     android:onClick="openProfile"
-                    android:text="Saját adatlap" />
+                    android:text="@string/profile" />
 
 
             </TableRow>

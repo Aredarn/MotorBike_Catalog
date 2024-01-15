@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setSupportActionBar(findViewById(R.id.my_toolbar));
     }
 
     public void openBikeInfo(View v)
@@ -30,6 +31,11 @@ public class MainActivity extends AppCompatActivity {
     {
         Intent profile = new Intent(this,Profile.class);
         this.startActivity(profile);
+    }
+
+    public void openTopBikes(View v)
+    {
+        //Intent topBikes = new Intent(this,top)
     }
 
 }

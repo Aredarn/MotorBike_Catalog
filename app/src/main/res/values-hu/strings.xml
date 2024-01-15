@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Rider</string>
+    <string name="brands">MÁRKÁK</string>
+    <string name="types">TÍPUSOK</string>
+    <string name="title_activity_bike_modells">Modellek</string>
+    <string name="first_fragment_label">Első rész</string>
+    <string name="second_fragment_label">Második rész</string>
+    <string name="next">Következő</string>
+    <string name="previous">Előző</string>
+    <string name="profile">Saját profil</string>
+    <string name="top_bikes">Legkeresettebb motorok</string>
+</resources>
